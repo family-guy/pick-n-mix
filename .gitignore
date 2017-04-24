@@ -1,1 +1,8 @@
-a.out
+# Ignore executables
+bin/*
+
+# Ignore build dir
+build
+
+# Ignore Mac specific files
+.DS_Store
