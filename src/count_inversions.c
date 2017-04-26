@@ -4,6 +4,11 @@
 #include <limits.h>
 #include "grkio.h"
 
+struct int_array {
+	int len;
+	int *A;
+};
+
 unsigned long long count_inv(int *A, int low, int high) {
 	if (low == high) {
 		return 0;
@@ -45,10 +50,9 @@ unsigned long long count_inv(int *A, int low, int high) {
 	return left_invs + right_invs + split_invs;
 }
 
-int main() {
-	const char *path = "IntegerArray.txt"; // relative to working directory when making files (not directory of this file)
-
-	char *fs = read_file(path);
+struct int_array *parser(char *fs) {
+	struct int_array *result;
+	
 	int *A;
 	int block_size = 1024;
 	int blocks = 1;
@@ -72,9 +76,20 @@ int main() {
 		pos = strtok(NULL, "\n");
 		i++;
 	}
-	unsigned long long invs = count_inv(A, 0, i - 1);
-	printf("%llu\n", invs);
+	result->len = i;
+	result->A = A;
 	free(A);
+	return result;
+}
+
+int main() {
+	const char *path = "IntegerArray.txt"; // relative to working directory when making files (not directory of this file)
+
+	char *fs = read_file(path);
+	struct int_array *A_prime = parser(fs);
+	
+	unsigned long long invs = count_inv(A_prime->A, 0, A_prime->len - 1);
+	printf("%llu\n", invs);
 	return 0;
 }
 
