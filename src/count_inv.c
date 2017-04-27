@@ -1,13 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <limits.h>
 #include "grkio.h"
-
-struct int_array {
-	int len;
-	int *A;
-};
+#include "util.h"
 
 unsigned long long count_inv(int *A, int low, int high) {
 	if (low == high) {
@@ -48,38 +42,6 @@ unsigned long long count_inv(int *A, int low, int high) {
 		}
 	}
 	return left_invs + right_invs + split_invs;
-}
-
-struct int_array *parser(char *fs) {
-	struct int_array *result;
-	
-	int *A;
-	int block_size = 1024;
-	int blocks = 1;
-	A = calloc(block_size * blocks, sizeof(int));
-	if (A == NULL) {
-		fprintf(stderr, "Error - unable to allocate required memory.\n");
-		exit(1);
-	}
-	int i = 0;
-	char *pos = strtok(fs, "\n");
-	while (pos != NULL) {
-		if (i == blocks * block_size) {
-			blocks++;
-			A = realloc(A, block_size * blocks * sizeof(int));
-			if (A == NULL) {
-				fprintf(stderr, "Error - unable to allocate required 				memory.\n");
-				exit(1);
-			}
-		}
-		A[i] = atoi(pos);
-		pos = strtok(NULL, "\n");
-		i++;
-	}
-	result->len = i;
-	result->A = A;
-	free(A);
-	return result;
 }
 
 int main() {

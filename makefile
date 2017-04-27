@@ -1,6 +1,6 @@
 TARGET = bin/runner
 CC = gcc
-OBJS = build/count_inversions.o build/grkio.o 
+OBJS = build/count_inv.o build/grkio.o build/util.o
 INC = -I include
 CFLAGS = -Wall -c
 LFLAGS = -Wall
@@ -8,11 +8,14 @@ LFLAGS = -Wall
 $(TARGET): $(OBJS) 
 	$(CC) $(LFLAGS) $(INC) $(OBJS) -o $(TARGET)
 	
-build/count_inversions.o: src/count_inversions.c
-	$(CC) $(CFLAGS) $(INC) src/count_inversions.c -o build/count_inversions.o
+build/count_inv.o: src/count_inv.c
+	$(CC) $(CFLAGS) $(INC) src/count_inv.c -o build/count_inv.o
 	
 build/grkio.o: src/grkio.c include/grkio.h
 	$(CC) $(CFLAGS) $(INC) src/grkio.c -o build/grkio.o
+	
+build/util.o: src/util.c include/util.h
+	$(CC) $(CFLAGS) $(INC) src/util.c -o build/util.o
 
 clean:
 	\rm build/*.o $(TARGET)
