@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include <limits.h>
-#include "grkio.h"
-#include "util.h"
 
 unsigned long long count_inv(int *A, int low, int high) {
 	if (low == high) {
@@ -42,16 +39,5 @@ unsigned long long count_inv(int *A, int low, int high) {
 		}
 	}
 	return left_invs + right_invs + split_invs;
-}
-
-int main() {
-	const char *path = "IntegerArray.txt"; // relative to working directory when making files (not directory of this file)
-
-	char *fs = read_file(path);
-	struct int_array *A_prime = parser(fs);
-	
-	unsigned long long invs = count_inv(A_prime->A, 0, A_prime->len - 1);
-	printf("%llu\n", invs);
-	return 0;
 }
 
