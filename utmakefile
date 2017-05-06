@@ -1,7 +1,7 @@
 TARGET = bin/runner
 CC = gcc
 OBJS = build/cu_test.o \
-build/all_unit_tests.o \
+build/all_tests.o \
 build/str_util_test.o \
 build/str_util.o \
 build/grk_io_test.o \
@@ -18,8 +18,8 @@ $(TARGET): $(OBJS)
 build/cu_test.o: vendor/cutest-1.5/CuTest.c vendor/cutest-1.5/CuTest.h 
 	$(CC) $(CFLAGS) $(INC) vendor/cutest-1.5/CuTest.c -o build/cu_test.o
 	
-build/all_unit_tests.o: test/unit/all_unit_tests.c 
-	$(CC) $(CFLAGS) $(INC) test/unit/all_unit_tests.c -o build/all_unit_tests.o
+build/all_tests.o: test/unit/all_tests.c 
+	$(CC) $(CFLAGS) $(INC) test/unit/all_tests.c -o build/all_tests.o
 	
 build/str_util_test.o: test/unit/util/str_util_test.c include/str_util_test.h
 	$(CC) $(CFLAGS) $(INC) test/unit/util/str_util_test.c -o \
