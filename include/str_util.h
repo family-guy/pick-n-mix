@@ -1,5 +1,5 @@
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef STR_UTIL_H
+#define STR_UTIL_H
 
 #include "int_array.h"
 

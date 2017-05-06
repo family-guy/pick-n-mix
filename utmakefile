@@ -6,7 +6,8 @@ build/str_util_test.o \
 build/str_util.o \
 build/grk_io_test.o \
 build/grk_io.o \
-
+build/count_inv_algo_test.o \
+build/count_inv_algo.o
 
 INC = -I vendor/cutest-1.5 -I include
 CFLAGS = -Wall -c
@@ -21,6 +22,9 @@ build/cu_test.o: vendor/cutest-1.5/CuTest.c vendor/cutest-1.5/CuTest.h
 build/all_tests.o: test/unit/all_tests.c 
 	$(CC) $(CFLAGS) $(INC) test/unit/all_tests.c -o build/all_tests.o
 	
+	
+	
+	
 build/str_util_test.o: test/unit/util/str_util_test.c include/str_util_test.h
 	$(CC) $(CFLAGS) $(INC) test/unit/util/str_util_test.c -o \
 	build/str_util_test.o
@@ -28,11 +32,30 @@ build/str_util_test.o: test/unit/util/str_util_test.c include/str_util_test.h
 build/str_util.o: src/util/str_util.c include/str_util.h
 	$(CC) $(CFLAGS) $(INC) src/util/str_util.c -o build/str_util.o
 	
+	
+	
+	
+	
 build/grk_io_test.o: test/unit/io/grk_io_test.c include/grk_io_test.h
 	$(CC) $(CFLAGS) $(INC) test/unit/io/grk_io_test.c -o build/grk_io_test.o
 	
 build/grk_io.o: src/io/grk_io.c include/grk_io.h
 	$(CC) $(CFLAGS) $(INC) src/io/grk_io.c -o build/grk_io.o
+	
+	
+
+	
+	
+build/count_inv_algo_test.o: test/unit/algo/count_inv_algo_test.c \
+	include/count_inv_algo_test.h
+	$(CC) $(CFLAGS) $(INC) test/unit/algo/count_inv_algo_test.c -o \
+	build/count_inv_algo_test.o
+	
+build/count_inv_algo.o: src/algo/count_inv_algo.c include/count_inv_algo.h
+	$(CC) $(CFLAGS) $(INC) src/algo/count_inv_algo.c -o build/count_inv_algo.o
+	
+	
+	
 	
 clean:
 	\rm build/*.o $(TARGET)

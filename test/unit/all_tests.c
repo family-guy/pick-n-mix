@@ -3,6 +3,7 @@
 #include "CuTest.h"
 #include "str_util_test.h"
 #include "grk_io_test.h"
+#include "count_inv_algo_test.h"
 
 void run_all_tests(void) {
 	CuString *output = CuStringNew();
@@ -10,6 +11,7 @@ void run_all_tests(void) {
 	
 	CuSuiteAddSuite(suite, str_util_get_suite());
 	CuSuiteAddSuite(suite, grk_io_get_suite());
+	CuSuiteAddSuite(suite, count_inv_algo_get_suite());
 	
 	CuSuiteRun(suite);
 	CuSuiteSummary(suite, output);
