@@ -6,11 +6,12 @@
 struct int_array *parser(char *fs) {
 	struct int_array *result = malloc(sizeof *result);
 	
-	int *A;
 	int block_size = 1024;
 	int blocks = 1;
-	A = calloc(block_size * blocks, sizeof(int));
-	if (A == NULL) {
+	
+	result->A = calloc(block_size * blocks, sizeof(int));
+	
+	if (result->A == NULL) {
 		fprintf(stderr, "Error - unable to allocate required memory.\n");
 		exit(1);
 	}
@@ -19,18 +20,16 @@ struct int_array *parser(char *fs) {
 	while (pos != NULL) {
 		if (i == blocks * block_size) {
 			blocks++;
-			A = realloc(A, block_size * blocks * sizeof(int));
-			if (A == NULL) {
+			result->A = realloc(result->A, block_size * blocks * sizeof(int));
+			if (result->A == NULL) {
 				fprintf(stderr, "Error - unable to allocate required 				memory.\n");
 				exit(1);
 			}
 		}
-		A[i] = atoi(pos);
+		result->A[i] = atoi(pos);
 		pos = strtok(NULL, "\n");
 		i++;
 	}
 	result->len = i;
-	result->A = A;
-
 	return result;
 }
