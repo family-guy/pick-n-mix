@@ -4,7 +4,7 @@
 #include "str_util.h"
 #include "int_array.h"
 
-void str_util_test_len(CuTest *tc) {
+void parser_test_len(CuTest *tc) {
 	char input[12] = "123\n100\n24\n\0";
 	
 	struct int_array *A_prime = parser(input);
@@ -16,7 +16,7 @@ void str_util_test_len(CuTest *tc) {
 	free(A_prime);
 }
 
-void str_util_test_vals(CuTest *tc) {
+void parser_test_vals(CuTest *tc) {
 	char input[12] = "123\n100\n24\n\0";
 	
 	struct int_array *A_prime = parser(input);
@@ -36,8 +36,8 @@ void str_util_test_vals(CuTest *tc) {
 
 CuSuite* str_util_get_suite() {
 	CuSuite* suite = CuSuiteNew();
-	SUITE_ADD_TEST(suite, str_util_test_len);
-	SUITE_ADD_TEST(suite, str_util_test_vals);
+	SUITE_ADD_TEST(suite, parser_test_len);
+	SUITE_ADD_TEST(suite, parser_test_vals);
 	return suite;
 }
 
