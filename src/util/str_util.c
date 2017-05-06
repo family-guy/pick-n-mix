@@ -4,7 +4,7 @@
 #include "int_array.h"
 
 struct int_array *parser(char *fs) {
-	struct int_array *result;
+	struct int_array *result = malloc(sizeof *result);
 	
 	int *A;
 	int block_size = 1024;
@@ -31,6 +31,6 @@ struct int_array *parser(char *fs) {
 	}
 	result->len = i;
 	result->A = A;
-	free(A);
+	
 	return result;
 }

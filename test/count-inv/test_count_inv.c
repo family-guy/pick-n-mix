@@ -11,5 +11,7 @@ int main() {
 	
 	unsigned long long invs = count_inv(A_prime->A, 0, A_prime->len - 1);
 	printf("%llu\n", invs);
+	
+	free(A_prime);
 	return 0;
 }
