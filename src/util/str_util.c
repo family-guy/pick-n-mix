@@ -31,6 +31,6 @@ struct int_array *parser(char *fs) {
 	}
 	result->len = i;
 	result->A = A;
-	
+
 	return result;
 }
