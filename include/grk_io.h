@@ -1,5 +1,5 @@
-#ifndef GRKIO_H
-#define GRKIO_H
+#ifndef GRK_IO_H
+#define GRK_IO_H
 
 char *read_file(const char *);
 
