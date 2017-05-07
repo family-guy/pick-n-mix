@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 #include "CuTest.h"
-#include "grk_io.h"
+#include "file_io.h"
 
 void read_file_test(CuTest *tc) {
 	const char *input = "./test/unit/io/aa";
@@ -11,7 +11,7 @@ void read_file_test(CuTest *tc) {
 	CuAssertStrEquals(tc, expected, actual);
 }
 
-CuSuite* grk_io_get_suite() {
+CuSuite* file_io_get_suite() {
 	CuSuite* suite = CuSuiteNew();
 	SUITE_ADD_TEST(suite, read_file_test);
 	return suite;
