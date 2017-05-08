@@ -7,7 +7,8 @@ build_unit/str_util.o \
 build_unit/file_io_test.o \
 build_unit/file_io.o \
 build_unit/count_inv_algo_test.o \
-build_unit/count_inv_algo.o
+build_unit/count_inv_algo.o \
+build_unit/aux_algo.o
 
 INC = -I vendor/cutest-1.5 -I include
 CFLAGS = -Wall -c
@@ -52,7 +53,11 @@ build_unit/count_inv_algo_test.o: test/unit/algo/count_inv_algo_test.c \
 	build_unit/count_inv_algo_test.o
 	
 build_unit/count_inv_algo.o: src/algo/count_inv_algo.c include/count_inv_algo.h
-	$(CC) $(CFLAGS) $(INC) src/algo/count_inv_algo.c -o build_unit/count_inv_algo.o
+	$(CC) $(CFLAGS) $(INC) src/algo/count_inv_algo.c -o \
+	build_unit/count_inv_algo.o
+	
+build_unit/aux_algo.o: src/algo/aux_algo.c include/aux_algo.h
+	$(CC) $(CFLAGS) $(INC) src/algo/aux_algo.c -o build_unit/aux_algo.o
 	
 	
 	
