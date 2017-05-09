@@ -1,6 +1,6 @@
 /** @file str_util_test.c
- *  @brief Function definitions for unit testing of functions that perform 
- *  operations on and transformations of strings.
+ *  @brief Function definitions for unit testing of functions that manipulate
+ *		   strings.
  *
  *  Uses the CuTest library. A unit test verifies one aspect of a function's
  *  behaviour. A function can have more than one unit test.
@@ -8,6 +8,7 @@
  *  @author Guy R. King (grking8@geemail.com)
  *  @date 8 May 2017
  *  @see http://cutest.sourceforge.net/
+ *  @see src/util/str_util.c
  *  @bug No known bugs.
  */
 
@@ -18,9 +19,9 @@
 #include "int_array.h"
 
 /** @brief Checks parser returns the correct integers.
- *  
- *  "123\n100\n24\n\0" is the example string. As parser allocates memory
- *  manually, once the test is done this memory needs to be freed.
+ *
+ *  The example string is  "123\n100\n24\n\0". As the parser allocates memory
+ *  manually, this memory needs to be freed once the test is done.
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.
@@ -51,9 +52,11 @@ void parser_test(CuTest *tc) {
 	free(A_prime);
 }
 
-/** @brief Creates a test suite for the unit tests in this file.
+/** @brief Returns a test suite containing the unit tests in this file.
  *  
- *  @return The test suite containing the unit tests.
+ *  Adds each unit test via SUITE_ADD_TEST.
+ *
+ *  @return The test suite.
  */
 CuSuite* str_util_get_suite() {
 	CuSuite* suite = CuSuiteNew();

@@ -1,3 +1,16 @@
+/** @file all_tests.c
+ *  @brief Main program for running e2e tests.
+ *
+ *  Uses the CuTest library. Individual e2e tests are grouped into suites   
+ *  which are placed into a container suite. The container suite is run and the 
+ *  test results displayed.
+ *
+ *  @author Guy R. King (grking8@geemail.com)
+ *  @date 8 May 2017
+ *  @see http://cutest.sourceforge.net/
+ *  @bug No known bugs.
+ */
+
 #include <stdio.h>
 
 #include "CuTest.h"
@@ -5,7 +18,7 @@
 
 void run_all_tests(void) {
 	CuString *output = CuStringNew();
-	CuSuite *suite = CuSuiteNew();
+	CuSuite *suite = CuSuiteNew(); // container suite
 	
 	CuSuiteAddSuite(suite, count_inv_get_suite());
 	

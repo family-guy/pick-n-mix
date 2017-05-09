@@ -1,8 +1,28 @@
+/** @file str_util.c
+ *  @brief Function definitions for functions that manipulate strings.
+ *
+ *  @author Guy R. King (grking8@geemail.com)
+ *  @date 8 May 2017
+ *  @see include/int_array.h
+ *  @bug No known bugs.
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include "int_array.h"
 
+/** @brief Parses a string containing a list of integers into an array of 
+ *         integers.
+ *
+ *  The integers in the string are separated by "\n". If there is not enough 
+ *  memory to read all the integers into an array, an error message is displayed
+ *  before exiting the function.
+ *
+ *  @param fs The string containing the list of integers.
+ *  @return The array of integers.
+ *  @see int_array
+ */
 struct int_array *parser(char *fs) {
 	struct int_array *result = malloc(sizeof *result);
 	

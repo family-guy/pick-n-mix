@@ -7,6 +7,7 @@
  *  @author Guy R. King (grking8@geemail.com)
  *  @date 8 May 2017
  *  @see http://cutest.sourceforge.net/
+ *  @see src/io/file_io.c
  *  @bug No known bugs.
  */
 
@@ -17,7 +18,7 @@
 
 /** @brief Checks read_file reads the contents of a text file into a string.
  *  
- *  test/unit/io/aa is the example file.
+ *  The example file is test/unit/io/aa.
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.
@@ -31,9 +32,11 @@ void read_file_test(CuTest *tc) {
 	CuAssertStrEquals(tc, expected, actual);
 }
 
-/** @brief Creates a test suite for the unit tests in this file.
+/** @brief Returns a test suite containing the unit tests in this file.
  *  
- *  @return The test suite containing the unit tests.
+ *  Adds each unit test via SUITE_ADD_TEST.
+ *
+ *  @return The test suite.
  */
 CuSuite* file_io_get_suite() {
 	CuSuite* suite = CuSuiteNew();
