@@ -19,6 +19,6 @@
  *  @param The subarray's upper demarcation.
  *  @return The number of inversions.
  */
-unsigned long long count_inv(int *, int, int);
+unsigned long long count_inv_ms(int *, int, int);
 
 #endif

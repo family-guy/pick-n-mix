@@ -31,7 +31,7 @@
  *  @return Void.
  *  @see read_file
  *  @see parser
- *  @see count_inv
+ *  @see count_inv_ms
  */
 void count_inv_test(CuTest *tc) {
 	const char *path = "./test/e2e/data/IntegerArray.txt";
@@ -39,7 +39,7 @@ void count_inv_test(CuTest *tc) {
 	char *fs = read_file(path);
 	struct int_array *A_prime = parser(fs);
 	
-	unsigned long long actual = count_inv(A_prime->A, 0, A_prime->len - 1);
+	unsigned long long actual = count_inv_ms(A_prime->A, 0, A_prime->len - 1);
 	unsigned long long expected = 2407905288;
 	
 	int cond = (actual == expected);
