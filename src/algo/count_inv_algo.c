@@ -14,7 +14,7 @@
 #include "aux_algo.h"
 
 /** @brief Counts the number of inversions in an array of integers using merge 
- *		   sort.
+ *         sort.
  *  
  *  Inversions are grouped into left, right, and split inversions. Left (right)
  *  inversions are those contained in the left (right) array, split inversions

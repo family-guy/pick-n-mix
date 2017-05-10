@@ -1,6 +1,6 @@
 /** @file str_util_test.c
  *  @brief Function definitions for unit testing of functions that manipulate
- *		   strings.
+ *         strings.
  *
  *  Uses the CuTest library. A unit test verifies one aspect of a function's
  *  behaviour. A function can have more than one unit test.

@@ -16,7 +16,7 @@
 #include "CuTest.h"
 
 /** @brief Returns a test suite containing the unit tests of functions that
- *		   manipulate strings.
+ *         manipulate strings.
  *
  *  @return The test suite.
  */

@@ -1,6 +1,6 @@
 /** @file aux_algo.h
  *  @brief Function prototypes for auxiliary routines used in algorithm
- * 		   implementations.
+ *         implementations.
  *
  *  @author Guy R. King (grking8@geemail.com)
  *  @date 8 May 2017
@@ -11,7 +11,7 @@
 #define AUX_ALGO_H
 
 /** @brief Counts the number of split inversions by taking two adjacent sorted
- *		   continguous subarrays and combining them into a single sorted array.
+ *         continguous subarrays and combining them into a single sorted array.
  *
  *  @param The array of integers containing the elements to sort.
  *  @param The left subarray's lower demarcation.

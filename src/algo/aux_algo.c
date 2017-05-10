@@ -1,6 +1,6 @@
 /** @file aux_algo.c
  *  @brief Function definitions for auxiliary routines used in algorithm
- * 		   implementations.
+ *         implementations.
  *
  *  @author Guy R. King (grking8@geemail.com)
  *  @date 8 May 2017
@@ -11,7 +11,7 @@
 #include <limits.h>
 
 /** @brief Counts the number of split inversions by taking two adjacent sorted
- *		   continguous subarrays and combining them into a single sorted array.
+ *         continguous subarrays and combining them into a single sorted array.
  *  
  *  Sorts in-place. The subarrays are copied into new arrays before being placed
  *  back into the original array in sorted order, during which the number of 

@@ -15,7 +15,7 @@
 #include "CuTest.h"
 
 /** @brief Returns a test suite containing the e2e tests of count inversion 
- *  	   algorithms.
+ *         algorithms.
  *
  *  @return The test suite.
  */
