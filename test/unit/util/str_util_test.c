@@ -43,7 +43,7 @@ void parser_test(CuTest *tc) {
 	}
 	else {
 		for (int i = 0; i < actual_len; i++) {
-			if (!actual[i] == expected[i]) {
+			if (actual[i] != expected[i]) {
 				cond = 0;
 			}
 		}

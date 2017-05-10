@@ -19,7 +19,7 @@
 #include "CuTest.h"
 #include "count_inv_algo.h"
 
-/** @brief Checks count_inv returns the correct number of inversions.
+/** @brief Checks count_inv_ms returns the correct number of inversions.
  *  
  *  The example array is [2,4,1,3,5].
  *
@@ -37,7 +37,7 @@ void count_inv_ms_test_inv(CuTest *tc) {
 	CuAssertIntEquals(tc, expected, actual);
 }
 
-/** @brief Checks count_inv sorts correctly.
+/** @brief Checks count_inv_ms sorts correctly.
  *  
  *  The example array is 
  *  [-5, 45, 111, -54945, 14, 77, 309504, -134, 1, 4, -4, 0].
@@ -55,7 +55,7 @@ void count_inv_ms_test_sort(CuTest *tc) {
 	int expected[] = {-54945, -134, -5, -4, 0, 1, 4, 14, 45, 77, 111, 309504};
 	int cond = 1;
 	for (int i = 0; i < input_len; i++) {
-		if (!actual[i] == expected[i]) {
+		if (actual[i] != expected[i]) {
 			cond = 0;
 		}
 	}

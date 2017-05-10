@@ -8,7 +8,9 @@ build_unit/file_io_test.o \
 build_unit/file_io.o \
 build_unit/count_inv_algo_test.o \
 build_unit/count_inv_algo.o \
-build_unit/aux_algo.o
+build_unit/aux_algo.o \
+build_unit/max_subarray_algo_test.o \
+build_unit/max_subarray_algo.o
 
 INC = -I vendor/cutest-1.5 -I include
 CFLAGS = -Wall -c
@@ -61,7 +63,21 @@ build_unit/aux_algo.o: src/algo/aux_algo.c include/aux_algo.h
 	
 	
 	
+
+
+build_unit/max_subarray_algo_test.o: test/unit/algo/max_subarray_algo_test.c \
+	include/max_subarray_algo_test.h
+	$(CC) $(CFLAGS) $(INC) test/unit/algo/max_subarray_algo_test.c -o \
+	build_unit/max_subarray_algo_test.o
 	
+build_unit/max_subarray_algo.o: src/algo/max_subarray_algo.c include/max_subarray_algo.h
+	$(CC) $(CFLAGS) $(INC) src/algo/max_subarray_algo.c -o \
+	build_unit/max_subarray_algo.o
+	
+	
+	
+	
+		
 clean:
 	\rm build_unit/*.o $(TARGET)
 	
