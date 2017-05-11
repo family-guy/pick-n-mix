@@ -57,7 +57,7 @@ void max_subarray_incr_test(CuTest *tc) {
 	else {
 		cond = 0;
 	}
-	if (cond == 1) {
+	if (cond) {
 		int sum = 0;
 		for (int i = 0; i < A_prime->len; i++) {
 			sum += A_prime->A[i];
