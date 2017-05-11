@@ -27,7 +27,7 @@
  *  
  *  The test data consists of 100,000 integers in a text file. The data is read,
  *  parsed into an array, and the maximum subarray calculated. Checks there are 
- *  no errors and the user's patience exceeds the runtime.
+ *  no errors and the user's patience exceeds, and sanity checks the result.
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.
@@ -41,9 +41,31 @@ void max_subarray_incr_test(CuTest *tc) {
 	char *fs = read_file(path);
 	struct int_array *A_prime = parser(fs);
 	
-	max_subarray_incr(A_prime);
-	
-	int cond = 1;
+	int *result = max_subarray_incr(A_prime);
+	int cond;
+	if (result[0] >= 0 && result[0] < A_prime->len) {
+		if (result[1] >= 0 && result[1] < A_prime->len) {
+			if (result[0] <= result[1]) {
+				cond = 1;
+			}
+			else {
+				cond = 0;
+			}
+		}
+		else cond = 0;
+	}
+	else {
+		cond = 0;
+	}
+	if (cond == 1) {
+		int sum = 0;
+		for (int i = 0; i < A_prime->len; i++) {
+			sum += A_prime->A[i];
+		}
+		if (result[2] < sum) {
+			cond = 0;
+		}
+	}
 	CuAssertTrue(tc, cond);
 }
 
