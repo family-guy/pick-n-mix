@@ -7,6 +7,8 @@ build_e2e/file_io.o \
 build_e2e/count_inv_algo.o \
 build_unit/aux_algo.o \
 build_e2e/count_inv_test.o \
+build_e2e/max_subarray_algo.o \
+build_e2e/max_subarray_test.o 
 
 INC = -I vendor/cutest-1.5 -I include
 CFLAGS = -Wall -c
@@ -29,6 +31,10 @@ build_e2e/str_util.o: src/util/str_util.c include/str_util.h
 build_e2e/file_io.o: src/io/file_io.c include/file_io.h
 	$(CC) $(CFLAGS) $(INC) src/io/file_io.c -o build_e2e/file_io.o
 	
+	
+	
+	
+	
 build_e2e/count_inv_algo.o: src/algo/count_inv_algo.c include/count_inv_algo.h
 	$(CC) $(CFLAGS) $(INC) src/algo/count_inv_algo.c -o \
 	build_e2e/count_inv_algo.o
@@ -36,8 +42,18 @@ build_e2e/count_inv_algo.o: src/algo/count_inv_algo.c include/count_inv_algo.h
 build_unit/aux_algo.o: src/algo/aux_algo.c include/aux_algo.h
 	$(CC) $(CFLAGS) $(INC) src/algo/aux_algo.c -o build_unit/aux_algo.o
 	
-	
-	
 build_e2e/count_inv_test.o: test/e2e/count_inv_test.c include/count_inv_test.h
 	$(CC) $(CFLAGS) $(INC) test/e2e/count_inv_test.c -o \
 	build_e2e/count_inv_test.o
+	
+	
+	
+	
+	
+build_e2e/max_subarray_algo.o: src/algo/max_subarray_algo.c include/max_subarray_algo.h
+	$(CC) $(CFLAGS) $(INC) src/algo/max_subarray_algo.c -o \
+	build_e2e/max_subarray_algo.o
+	
+build_e2e/max_subarray_test.o: test/e2e/max_subarray_test.c include/max_subarray_test.h
+	$(CC) $(CFLAGS) $(INC) test/e2e/max_subarray_test.c -o \
+	build_e2e/max_subarray_test.o

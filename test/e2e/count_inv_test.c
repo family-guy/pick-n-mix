@@ -1,4 +1,4 @@
-/** @file count_inv_algo_test.c
+/** @file count_inv_test.c
  *  @brief Function definitions for e2e testing of count inversion algorithms.
  *
  *  Uses the CuTest library. Contains e2e tests for each function that 
@@ -33,7 +33,7 @@
  *  @see parser
  *  @see count_inv_ms
  */
-void count_inv_test(CuTest *tc) {
+void count_inv_ms_test(CuTest *tc) {
 	const char *path = "./test/e2e/data/IntegerArray.txt";
 	
 	char *fs = read_file(path);
@@ -54,7 +54,7 @@ void count_inv_test(CuTest *tc) {
  */
 CuSuite* count_inv_get_suite() {
 	CuSuite* suite = CuSuiteNew();
-	SUITE_ADD_TEST(suite, count_inv_test);
+	SUITE_ADD_TEST(suite, count_inv_ms_test);
 	return suite;
 }
 

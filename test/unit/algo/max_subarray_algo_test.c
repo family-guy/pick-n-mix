@@ -3,9 +3,11 @@
  *
  *  Uses the CuTest library. Contains unit tests for each function that 
  *  implements an algorithm to find the maximum subarray of an array of 
- *  integers. Let A be an array. The maximum (contiguous) subarray is the one 
- *  whose sum of its elements is the largest. A unit test verifies one aspect of
- *  a function's behaviour. A function can have more than one unit test.
+ *  integers. Let A be an array. The maximum subarray is the (continguous)
+ *  subarray S of A such that for each subarray S' of A, the sum of the elements
+ *  of S' is less than or equal to the sum of the elements of S. A unit test 
+ *  verifies one aspect of a function's behaviour. A function can have more than
+ *  one unit test.
  *
  *  @author Guy R. King (grking8@geemail.com)
  *  @date 10 May 2017

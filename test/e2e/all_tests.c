@@ -15,12 +15,14 @@
 
 #include "CuTest.h"
 #include "count_inv_test.h"
+#include "max_subarray_test.h"
 
 void run_all_tests(void) {
 	CuString *output = CuStringNew();
 	CuSuite *suite = CuSuiteNew(); // container suite
 	
 	CuSuiteAddSuite(suite, count_inv_get_suite());
+	CuSuiteAddSuite(suite, max_subarray_get_suite());
 	
 	CuSuiteRun(suite);
 	CuSuiteSummary(suite, output);

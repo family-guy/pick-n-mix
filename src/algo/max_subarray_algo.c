@@ -7,7 +7,7 @@
  *  of the elements of S' is less than or equal to the sum of the elements of S.
  *
  *  @author Guy R. King (grking8@geemail.com)
- *  @date 10 May 2017
+ *  @date 11 May 2017
  *  @see include/int_array.h
  *  @bug No known bugs.
  */
