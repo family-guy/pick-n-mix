@@ -17,10 +17,20 @@
 
 /** @brief Finds the maximum subarray of an array of integers incrementally.
  *
- *  @param A The array to find the maximum subarray of.
+ *  @param The array to find the maximum subarray of.
  *  @return An array containing the maximum subarray's lower demarcation, upper
  *  demarcation, and sum.
  */
-int *max_subarray_incr(struct int_array *A);
+int *max_subarray_incr(struct int_array *);
+
+/** @brief Finds the maximum subarray of an array of integers using divide and
+ *  conquer.
+ *
+ *  @param The array to find the maximum subarray of.
+ *  @return An array containing the maximum subarray's lower demarcation, upper
+ *  demarcation, sum.
+ *  @see int_array
+ */
+int *max_subarray_dc(struct int_array *);
 
 #endif

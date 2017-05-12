@@ -2,7 +2,7 @@
  *  @brief Function prototypes for count inversion algorithms.
  *
  *  Let A be an array. An inversion is a pair of indices i,j such that i<j, A[i]
- *  >A[j]. Functions may rely on auxiliary functions.
+ *  >A[j].
  *
  *  @author Guy R. King (grking8@geemail.com)
  *  @date 8 May 2017

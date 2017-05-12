@@ -56,3 +56,31 @@ int *max_subarray_incr(struct int_array *A_prime) {
 	return result;
 }
 
+/** @brief Finds the maximum subarray of an array of integers using divide and
+ *  conquer.
+ *
+ *  @param A_prime The array to find the maximum subarray of.
+ *  @return An array containing the maximum subarray's lower demarcation, upper
+ *  demarcation, sum.
+ *  @see int_array
+ */
+int *max_subarray_dc(struct int_array *A_prime) {
+	int *result = calloc(3, sizeof(int));
+	result[0] = 0;
+	result[1] = 0;
+	result[2] = 0;
+	return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
