@@ -27,10 +27,12 @@ int *max_subarray_incr(struct int_array *);
  *  conquer.
  *
  *  @param The array to find the maximum subarray of.
+ *  @param The subarray's lower demarcation.
+ *  @param The subarray's upper demarcation.
  *  @return An array containing the maximum subarray's lower demarcation, upper
  *  demarcation, sum.
  *  @see int_array
  */
-int *max_subarray_dc(struct int_array *);
+int *max_subarray_dc(int *, int, int);
 
 #endif

@@ -9,6 +9,7 @@
  */
 
 #include <limits.h>
+#include <stdlib.h>
 
 /** @brief Counts the number of split inversions by taking two adjacent sorted
  *         continguous subarrays and combining them into a single sorted array.
@@ -58,3 +59,36 @@ unsigned long long count_split_inv(int *A, int low, int high, int mid) {
 	
 	return split_invs;
 }
+
+int *max_subarray_cross(int *A, int low, int mid, int high) {
+	int *result = calloc(3, sizeof(int));
+	int left_sum = INT_MAX * (-1);
+	int sum = 0;
+	int max_left = -1;
+	for (int i = mid; i >= low; i--) {
+		sum += A[i];
+		if (sum > left_sum) {
+			left_sum = sum;
+			max_left = i;
+		}
+	}
+	int right_sum = INT_MAX * (-1);
+	sum = 0;
+	int max_right = -1;
+	for (int i = mid + 1; i <= high; i++) {
+		sum += A[i];
+		if (sum > right_sum) {
+			right_sum = sum;
+			max_right = i;
+		}
+	}
+	result[0] = max_left;
+	result[1] = max_right;
+	result[2] = left_sum + right_sum;
+	return result;
+}
+
+
+
+
+

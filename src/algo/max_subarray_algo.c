@@ -15,6 +15,7 @@
 #include <stdlib.h>
 
 #include "int_array.h"
+#include "aux_algo.h"
 
 /** @brief Finds the maximum subarray of an array of integers incrementally.
  *
@@ -59,16 +60,40 @@ int *max_subarray_incr(struct int_array *A_prime) {
 /** @brief Finds the maximum subarray of an array of integers using divide and
  *  conquer.
  *
- *  @param A_prime The array to find the maximum subarray of.
+ *  As the maximum subarray of an array of one element is trivially the whole 
+ *  array, it suffices to divide an array into two and find the maximum subarray
+ *  using the maximum subarray of the left array and right array, i.e. find the
+ *  maximum subarray with at least one element in the left array and the right
+ *  array. Demarcations are inclusive.
+ *  
+ *  @param A The array to find the maximum subarray of.
+ *  @param low The subarray's lower demarcation.
+ *  @param high The subarray's upper demarcation.
  *  @return An array containing the maximum subarray's lower demarcation, upper
  *  demarcation, sum.
  *  @see int_array
  */
-int *max_subarray_dc(struct int_array *A_prime) {
+int *max_subarray_dc(int *A, int low, int high) {
 	int *result = calloc(3, sizeof(int));
-	result[0] = 0;
-	result[1] = 0;
-	result[2] = 0;
+	if (low == high) {
+		result[0] = low;
+		result[1] = high;
+		result[2] = low;
+		return result;
+	}
+	int mid = (low + high) / 2;
+	int *left = max_subarray_dc(A, low, mid);
+	int *right = max_subarray_dc(A, mid + 1, high);
+	int *cross = max_subarray_cross(A, low, mid, high);
+	if (left[2] >= right[2] && left[2] >= cross[2]) {
+		result = left;
+	}
+	else if (right[2] >= left[2] && right[2] >= cross[2]) {
+		result = right;
+	}
+	else {
+		result = cross;
+	}
 	return result;
 }
 

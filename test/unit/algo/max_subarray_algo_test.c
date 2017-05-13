@@ -67,16 +67,9 @@ void max_subarray_incr_test(CuTest *tc) {
  *  @see max_subarray_dc
  */
 void max_subarray_dc_test(CuTest *tc) {
-	int x[] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
-			
-	struct int_array *input = malloc(sizeof *input);
-
-	input->len = 16;
-	input->A = calloc(input->len, sizeof(int));
-	
-	memcpy(input->A, x, sizeof(int) * input->len);
-	
-	int *actual = max_subarray_dc(input);
+	int input[] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
+	int len_input = 16;
+	int *actual = max_subarray_dc(input, 0, len_input - 1);
 	int expected[] = {7, 10, 43};
 	int expected_len = 3;
 	
@@ -87,7 +80,6 @@ void max_subarray_dc_test(CuTest *tc) {
 		}
 	}
 	CuAssertTrue(tc, cond);
-	free(input);
 	free(actual);
 }
 

@@ -21,4 +21,6 @@
  */
 unsigned long long count_split_inv(int *, int, int, int);
 
+int *max_subarray_cross(int *, int, int, int);
+
 #endif
