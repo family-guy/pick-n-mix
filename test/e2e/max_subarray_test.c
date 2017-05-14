@@ -70,6 +70,54 @@ void max_subarray_incr_test(CuTest *tc) {
 	CuAssertTrue(tc, cond);
 }
 
+/** @brief e2e test of the maximum subarray algorithm that solves using divide
+ *         and conquer.
+ *  
+ *  The test data consists of 100,000 integers in a text file. The data is read,
+ *  parsed into an array, and the maximum subarray calculated. Checks there are 
+ *  no errors and the user's patience exceeds the runtime, and sanity checks
+ *  the result.
+ *
+ *  @param tc Pointer to CuTest @c struct.
+ *  @return Void.
+ *  @see read_file
+ *  @see parser
+ *  @see max_subarray_dc
+ */
+void max_subarray_dc_test(CuTest *tc) {
+	const char *path = "./test/e2e/data/IntegerArray.txt";
+	
+	char *fs = read_file(path);
+	struct int_array *A_prime = parser(fs);
+	
+	int *result = max_subarray_dc(A_prime->A, 0, A_prime->len);
+	int cond;
+	if (result[0] >= 0 && result[0] < A_prime->len) {
+		if (result[1] >= 0 && result[1] < A_prime->len) {
+			if (result[0] <= result[1]) {
+				cond = 1;
+			}
+			else {
+				cond = 0;
+			}
+		}
+		else cond = 0;
+	}
+	else {
+		cond = 0;
+	}
+	if (cond) {
+		int sum = 0;
+		for (int i = 0; i < A_prime->len; i++) {
+			sum += A_prime->A[i];
+		}
+		if (result[2] < sum) {
+			cond = 0;
+		}
+	}
+	CuAssertTrue(tc, cond);
+}
+
 /** @brief Returns a test suite containing the e2e tests in this file.
  *  
  *  Adds each e2e test via SUITE_ADD_TEST.
@@ -79,6 +127,7 @@ void max_subarray_incr_test(CuTest *tc) {
 CuSuite* max_subarray_get_suite() {
 	CuSuite* suite = CuSuiteNew();
 	SUITE_ADD_TEST(suite, max_subarray_incr_test);
+	SUITE_ADD_TEST(suite, max_subarray_dc_test);
 	return suite;
 }
 

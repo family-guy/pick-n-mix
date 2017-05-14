@@ -21,6 +21,15 @@
  */
 unsigned long long count_split_inv(int *, int, int, int);
 
+/** @brief Finds the maximum subarray with at least one element in the left 
+ *         array and at least one element in the right array.
+ *
+ *  @param The array of integers.
+ *  @param The left subarray's lower demarcation.
+ *  @param The left subarray's upper demarcation.
+ *  @param The right subarray's upper demarcation.
+ *  @return The maximum crossing subarray.
+ */
 int *max_subarray_cross(int *, int, int, int);
 
 #endif

@@ -62,16 +62,16 @@ int *max_subarray_incr(struct int_array *A_prime) {
  *
  *  As the maximum subarray of an array of one element is trivially the whole 
  *  array, it suffices to divide an array into two and find the maximum subarray
- *  using the maximum subarray of the left array and right array, i.e. find the
- *  maximum subarray with at least one element in the left array and the right
- *  array. Demarcations are inclusive.
+ *  using the maximum subarray of the left array and the maximum subarray of the
+ *  right array, i.e. find the maximum subarray with at least one element in 
+ *  each of the two (left and right) arrays. Demarcations are inclusive.
  *  
  *  @param A The array to find the maximum subarray of.
  *  @param low The subarray's lower demarcation.
  *  @param high The subarray's upper demarcation.
  *  @return An array containing the maximum subarray's lower demarcation, upper
  *  demarcation, sum.
- *  @see int_array
+ *  @see max_subarray_cross
  */
 int *max_subarray_dc(int *A, int low, int high) {
 	int *result = calloc(3, sizeof(int));

@@ -5,6 +5,7 @@
  *  @author Guy R. King (grking8@geemail.com)
  *  @date 8 May 2017
  *  @see src/algo/count_inv_algo.c
+ *  @see src/algo/max_subarray_algo.c
  *  @bug No known bugs.
  */
 
@@ -23,7 +24,7 @@
  *  @param high The right subarray's upper demarcation.
  *  @param mid The left subarray's upper demarcation.
  *  @return The number of split inversions.
- *  @see count_inv
+ *  @see count_inv_ms
  */
 unsigned long long count_split_inv(int *A, int low, int high, int mid) {
 	int L[mid - low + 2];
@@ -56,10 +57,23 @@ unsigned long long count_split_inv(int *A, int low, int high, int mid) {
 			split_invs += (mid - low + 1) - i;
 		}
 	}
-	
 	return split_invs;
 }
 
+/** @brief Finds the maximum subarray with at least one element in the left 
+ *         array and at least one element in the right array.
+ *  
+ *  Considers the solution subarray as the union of two subarrays, one 
+ *  contained in the left array, the other contained in the right array. Uses 
+ *  the contiguity of the solution subarray.
+ *
+ *  @param A The array of integers.
+ *  @param low The left subarray's lower demarcation.
+ *  @param mid The left subarray's upper demarcation.
+ *  @param high The right subarray's upper demarcation.
+ *  @return The maximum crossing subarray.
+ *  @see max_subarray_dc
+ */
 int *max_subarray_cross(int *A, int low, int mid, int high) {
 	int *result = calloc(3, sizeof(int));
 	int left_sum = INT_MAX * (-1);
