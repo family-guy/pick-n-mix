@@ -10,7 +10,9 @@ build_unit/count_inv_algo_test.o \
 build_unit/count_inv_algo.o \
 build_unit/aux_algo.o \
 build_unit/max_subarray_algo_test.o \
-build_unit/max_subarray_algo.o
+build_unit/max_subarray_algo.o \
+build_unit/gcd_algo_test.o \
+build_unit/gcd_algo.o
 
 INC = -I vendor/cutest-1.5 -I include
 CFLAGS = -Wall -c
@@ -76,6 +78,16 @@ build_unit/max_subarray_algo.o: src/algo/max_subarray_algo.c include/max_subarra
 	
 	
 	
+	
+	
+build_unit/gcd_algo_test.o: test/unit/algo/gcd_algo_test.c \
+	include/gcd_algo_test.h
+	$(CC) $(CFLAGS) $(INC) test/unit/algo/gcd_algo_test.c -o \
+	build_unit/gcd_algo_test.o
+	
+build_unit/gcd_algo.o: src/algo/gcd_algo.c include/gcd_algo.h
+	$(CC) $(CFLAGS) $(INC) src/algo/gcd_algo.c -o \
+	build_unit/gcd_algo.o
 	
 		
 clean:

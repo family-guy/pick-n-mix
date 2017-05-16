@@ -24,7 +24,7 @@
 int *gcd_euclid(struct int_array_2d *A_prime) {
 	int *result = calloc(A_prime->rows, sizeof(int));
 	for (int i = 0; i < A_prime->rows; i++) {
-		A[i] = 0;
+		result[i] = 0;
 	}
 	return result;
 }
