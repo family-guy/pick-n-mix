@@ -6,6 +6,7 @@
  *  @date 8 May 2017
  *  @see src/algo/count_inv_algo.c
  *  @see src/algo/max_subarray_algo.c
+ *  @see src/algo/gcd_algo.c
  *  @bug No known bugs.
  */
 
@@ -102,7 +103,35 @@ int *max_subarray_cross(int *A, int low, int mid, int high) {
 	return result;
 }
 
-
+/** @brief Finds the GCD of a pair of positive integers using Euclid's   
+ *         algorithm.
+ *  
+ *  Uses the property GCD(a,b)=GCD(b-a,a),a<b.
+ *
+ *  @param a The first integer in the pair.
+ *  @param b The second integer in the pair.
+ *  @return The GCD.
+ *  @see gcd_euclid
+ */
+int gcd_euclid_imp(int a, int b) {
+	if (a == 1 || b == 1) {
+		return 1;
+	}
+	if (a == b) {
+		return a;
+	}
+	int smaller;
+	int larger;
+	if (a > b) {
+		larger = a;
+		smaller = b;
+	}
+	else {
+		larger = b;
+		smaller = a;
+	}
+	return gcd_euclid_imp(smaller, larger - smaller);
+}
 
 
 

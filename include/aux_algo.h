@@ -32,4 +32,12 @@ unsigned long long count_split_inv(int *, int, int, int);
  */
 int *max_subarray_cross(int *, int, int, int);
 
+/** @brief Find the GCD of a pair of positive integers using Euclid's algorithm.
+ *
+ *  @param The first integer in the pair.
+ *  @param The second integer in the pair.
+ *  @return The GCD.
+ */
+int gcd_euclid_imp(int, int);
+
 #endif
