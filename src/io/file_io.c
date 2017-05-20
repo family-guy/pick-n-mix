@@ -47,6 +47,5 @@ char *read_file(const char *path) {
 	}
 	fclose(fp);
 	buf[i] = '\0';
-	free(buf);
 	return buf;
 }

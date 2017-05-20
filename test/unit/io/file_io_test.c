@@ -30,6 +30,7 @@ void read_file_test(CuTest *tc) {
 	char *actual = read_file(input);
 	char *expected = "This is a test file.\nThis is the second line of the test file.\n";
 	CuAssertStrEquals(tc, expected, actual);
+	free(actual);
 }
 
 /** @brief Returns a test suite containing the unit tests in this file.

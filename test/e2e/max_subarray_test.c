@@ -17,6 +17,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "CuTest.h"
 #include "file_io.h"
@@ -67,6 +68,9 @@ void max_subarray_incr_test(CuTest *tc) {
 		}
 	}
 	CuAssertTrue(tc, cond);
+	free(fs);
+	free(A_prime);
+	free(result);
 }
 
 /** @brief e2e test of the maximum subarray algorithm that solves using divide
@@ -115,6 +119,9 @@ void max_subarray_dc_test(CuTest *tc) {
 		}
 	}
 	CuAssertTrue(tc, cond);
+	free(fs);
+	free(A_prime);
+	free(result);
 }
 
 /** @brief Returns a test suite containing the e2e tests in this file.

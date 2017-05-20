@@ -66,6 +66,10 @@ void gcd_euclid_test(CuTest  *tc) {
 		}
 	}
 	CuAssertTrue(tc, cond);
+	free(fs);
+	free(parsed);
+	free(A_prime);
+	free(result);
 }
 
 /** @brief Returns a test suite containing the e2e tests in this file.

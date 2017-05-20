@@ -16,6 +16,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "CuTest.h"
 #include "file_io.h"
@@ -46,6 +47,8 @@ void count_inv_ms_test(CuTest *tc) {
 	
 	int cond = (actual == expected);
 	CuAssertTrue(tc, cond);
+	free(fs);
+	free(A_prime);
 }
 
 /** @brief Returns a test suite containing the e2e tests in this file.
