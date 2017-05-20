@@ -25,7 +25,9 @@
 /** @brief e2e test of the count inversion algorithm that uses merge sort.
  *  
  *  The test data consists of 100,000 integers in a text file. The data is read,
- *  parsed into an array, and the number of inversions counted.
+ *  parsed into an array, and the number of inversions counted. Checks there are
+ *  no errors, the user's patience exceeds the runtime, and the number of
+ *  inversions.
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.

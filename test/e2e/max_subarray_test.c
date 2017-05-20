@@ -27,8 +27,7 @@
  *  
  *  The test data consists of 100,000 integers in a text file. The data is read,
  *  parsed into an array, and the maximum subarray calculated. Checks there are 
- *  no errors and the user's patience exceeds the runtime, and sanity checks
- *  the result.
+ *  no errors the user's patience exceeds the runtime, and for sanity.
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.
@@ -75,8 +74,8 @@ void max_subarray_incr_test(CuTest *tc) {
  *  
  *  The test data consists of 100,000 integers in a text file. The data is read,
  *  parsed into an array, and the maximum subarray calculated. Checks there are 
- *  no errors and the user's patience exceeds the runtime, and sanity checks
- *  the result.
+ *  no errors, the user's patience exceeds the runtime, and sanity checks the
+ *  result.
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.
