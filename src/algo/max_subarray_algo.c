@@ -21,7 +21,8 @@
  *
  *  Keeps track of the maximum subarray and the maximum right subarray (the 
  *  maximum subarray such that A[A.len-1] is in the subarray). Solves for 
- *  successive subararys in the order A[0..0], A[0..1], ..., A.
+ *  successive subararys in the order A[0..0], A[0..1], ..., A. It is the
+ *  caller's responsibility to free the memory dynamically allocated.
  *
  *  @param A_prime The array to find the maximum subarray of.
  *  @return An array containing the maximum subarray's lower demarcation, upper
@@ -64,7 +65,8 @@ int *max_subarray_incr(struct int_array *A_prime) {
  *  array, it suffices to divide an array into two and find the maximum subarray
  *  using the maximum subarray of the left array and the maximum subarray of the
  *  right array, i.e. find the maximum subarray with at least one element in 
- *  each of the two (left and right) arrays. Demarcations are inclusive.
+ *  each of the two (left and right) arrays. Demarcations are inclusive. It is
+ *  the caller's responsibility to free the memory dynamically allocated.
  *  
  *  @param A The array to find the maximum subarray of.
  *  @param low The subarray's lower demarcation.

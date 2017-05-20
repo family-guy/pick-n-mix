@@ -12,7 +12,8 @@
 /** @brief Reads the contents of a text file into a string.
  *  
  *  If there is not enough memory to read in the contents of the file, an error
- *  message is displayed before exiting the function.
+ *  message is displayed before exiting the function. It is the caller's 
+ *  responsibility to free the memory dynamically allocated.
  *
  *  @param path The text file's path.
  *  @return The string containing the file's contents.

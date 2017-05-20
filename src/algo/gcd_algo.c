@@ -19,6 +19,8 @@
 /** @brief Finds the GCDs of an array of pairs of positive integers using
  *         Euclid's algorithm.
  *
+ *  It is the caller's responsibility to free the memory dynamically allocated.
+ *
  *  @param A_prime The array of pairs of positive integers.
  *  @return An array containing the GCD of each pair of positive integers.
  *  @see int_array_2d

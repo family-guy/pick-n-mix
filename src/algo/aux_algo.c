@@ -66,7 +66,8 @@ unsigned long long count_split_inv(int *A, int low, int high, int mid) {
  *  
  *  Considers the solution subarray as the union of two subarrays, one 
  *  contained in the left array, the other contained in the right array. Uses 
- *  the contiguity of the solution subarray.
+ *  the contiguity of the solution subarray. It is the caller's responsibility
+ *  to free the memory dynamically allocated.
  *
  *  @param A The array of integers.
  *  @param low The left subarray's lower demarcation.
@@ -103,7 +104,7 @@ int *max_subarray_cross(int *A, int low, int mid, int high) {
 	return result;
 }
 
-/** @brief Finds the GCD of a pair of positive integers using Euclid's   
+/** @brief Finds the GCD of a pair of positive integers using Euclid's
  *         algorithm.
  *  
  *  Uses the property GCD(a,b)=GCD(b-a,a),a<b.
