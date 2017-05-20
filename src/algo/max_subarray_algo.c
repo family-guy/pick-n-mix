@@ -13,6 +13,7 @@
  */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "int_array.h"
 #include "aux_algo.h"
@@ -76,7 +77,8 @@ int *max_subarray_incr(struct int_array *A_prime) {
  *  @see max_subarray_cross
  */
 int *max_subarray_dc(int *A, int low, int high) {
-	int *result = calloc(3, sizeof(int));
+	int len_result = 3;
+	int *result = calloc(len_result, sizeof(int));
 	if (low == high) {
 		result[0] = low;
 		result[1] = high;
@@ -88,14 +90,23 @@ int *max_subarray_dc(int *A, int low, int high) {
 	int *right = max_subarray_dc(A, mid + 1, high);
 	int *cross = max_subarray_cross(A, low, mid, high);
 	if (left[2] >= right[2] && left[2] >= cross[2]) {
-		result = left;
+		for (int i = 0; i < len_result; i++) {
+			result[i] = left[i];
+		}
 	}
 	else if (right[2] >= left[2] && right[2] >= cross[2]) {
-		result = right;
+		for (int i = 0; i < len_result; i++) {
+			result[i] = right[i];
+		}
 	}
 	else {
-		result = cross;
+		for (int i = 0; i < len_result; i++) {
+			result[i] = cross[i];
+		}
 	}
+	free(left);
+	free(right);
+	free(cross);
 	return result;
 }
 
