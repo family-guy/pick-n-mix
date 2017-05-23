@@ -22,5 +22,16 @@
  *  @see int_array
  */
 void sort_bubble(struct int_array *A_prime) {
-	return;
+	int swap = 1;
+	while (swap) {
+		swap = 0;
+		for (int i = 0; i < A_prime->len - 1; i++) {
+			if (A_prime->A[i] > A_prime->A[i + 1]) {
+				swap = 1;
+				int tmp = A_prime->A[i];
+				A_prime->A[i] = A_prime->A[i + 1];
+				A_prime->A[i + 1] = tmp;
+			}
+		}
+	}
 }
