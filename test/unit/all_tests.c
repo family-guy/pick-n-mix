@@ -19,6 +19,7 @@
 #include "count_inv_algo_test.h"
 #include "max_subarray_algo_test.h"
 #include "gcd_algo_test.h"
+#include "sort_algo_test.h"
 
 void run_all_tests(void) {
 	CuString *output = CuStringNew();
@@ -29,6 +30,7 @@ void run_all_tests(void) {
 	CuSuiteAddSuite(suite, count_inv_algo_get_suite());
 	CuSuiteAddSuite(suite, max_subarray_algo_get_suite());
 	CuSuiteAddSuite(suite, gcd_algo_get_suite());
+	CuSuiteAddSuite(suite, sort_algo_get_suite());
 	
 	CuSuiteRun(suite);
 	CuSuiteSummary(suite, output);
