@@ -10,7 +10,9 @@ build_e2e/count_inv_test.o \
 build_e2e/max_subarray_algo.o \
 build_e2e/max_subarray_test.o \
 build_e2e/gcd_algo.o \
-build_e2e/gcd_test.o 
+build_e2e/gcd_test.o \
+build_e2e/sort_algo.o \
+build_e2e/sort_test.o 
 
 INC = -I vendor/cutest-1.5 -I include
 CFLAGS = -Wall -c
@@ -71,3 +73,15 @@ build_e2e/gcd_algo.o: src/algo/gcd_algo.c include/gcd_algo.h
 build_e2e/gcd_test.o: test/e2e/gcd_test.c include/gcd_test.h
 	$(CC) $(CFLAGS) $(INC) test/e2e/gcd_test.c -o \
 	build_e2e/gcd_test.o
+	
+	
+	
+	
+	
+build_e2e/sort_algo.o: src/algo/sort_algo.c include/sort_algo.h
+	$(CC) $(CFLAGS) $(INC) src/algo/sort_algo.c -o \
+	build_e2e/sort_algo.o
+	
+build_e2e/sort_test.o: test/e2e/sort_test.c include/sort_test.h
+	$(CC) $(CFLAGS) $(INC) test/e2e/sort_test.c -o \
+	build_e2e/sort_test.o

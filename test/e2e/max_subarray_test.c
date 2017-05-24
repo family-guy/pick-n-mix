@@ -28,7 +28,7 @@
  *  
  *  The test data consists of 100,000 integers in a text file. The data is read,
  *  parsed into an array, and the maximum subarray calculated. Checks there are 
- *  no errors the user's patience exceeds the runtime, and for sanity.
+ *  no errors, the user's patience exceeds the runtime, and for sanity.
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.
