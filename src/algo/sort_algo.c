@@ -35,3 +35,17 @@ void sort_bubble(struct int_array *A_prime) {
 		}
 	}
 }
+
+/** @brief Sorts an array of integers into ascending order in-place using
+ *         insertion sort.
+ *
+ *  Sorts incrementally by each time adding an element to a sorted subarray of n
+ *  elements to create a sorted subarray of n+1 elements.
+ *
+ *  @param A_prime The array to sort.
+ *  @return Void.
+ *  @see int_array
+ */
+void sort_ins(struct int_array *A_prime) {
+	return;
+}
