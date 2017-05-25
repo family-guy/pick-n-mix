@@ -47,5 +47,13 @@ void sort_bubble(struct int_array *A_prime) {
  *  @see int_array
  */
 void sort_ins(struct int_array *A_prime) {
-	return;
+	for (int i = 1; i < A_prime->len; i++) {
+		int j = i - 1;
+		int val_to_ins = A_prime->A[i];
+		while (j >= 0 && A_prime->A[j] > val_to_ins) {
+			A_prime->A[j + 1] = A_prime->A[j];
+			j--;
+		}
+		A_prime->A[j + 1] = val_to_ins;
+	}
 }

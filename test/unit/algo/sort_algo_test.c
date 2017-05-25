@@ -60,7 +60,7 @@ void sort_bubble_test(CuTest *tc) {
  *
  *  @param tc Pointer to CuTest @c struct.
  *  @return Void.
- *  @see sort_bubble
+ *  @see sort_ins
  */
 void sort_ins_test(CuTest *tc) {
 	int x[] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
