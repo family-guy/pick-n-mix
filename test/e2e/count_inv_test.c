@@ -62,4 +62,3 @@ CuSuite* count_inv_get_suite() {
 	SUITE_ADD_TEST(suite, count_inv_ms_test);
 	return suite;
 }
-

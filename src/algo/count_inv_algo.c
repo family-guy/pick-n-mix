@@ -39,4 +39,3 @@ unsigned long long count_inv_ms(int *A, int low, int high) {
 	
 	return left_invs + right_invs + split_invs;
 }
-

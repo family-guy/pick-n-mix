@@ -17,8 +17,8 @@
  *
  *  The integers in the string are separated by "\n". If there is not enough 
  *  memory to read all the integers into an array, an error message is displayed
- *  before exiting the function. It is the caller's responsibility to free the
- *  memory dynamically allocated.
+ *  before exiting the function. It is the function caller's responsibility to 
+ *  free the memory dynamically allocated.
  *
  *  @param fs The string containing the list of integers.
  *  @return The array of integers.

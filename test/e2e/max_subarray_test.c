@@ -136,4 +136,3 @@ CuSuite* max_subarray_get_suite() {
 	SUITE_ADD_TEST(suite, max_subarray_dc_test);
 	return suite;
 }
-

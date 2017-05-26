@@ -133,6 +133,3 @@ int gcd_euclid_imp(int a, int b) {
 	}
 	return gcd_euclid_imp(smaller, larger - smaller);
 }
-
-
-

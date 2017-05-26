@@ -12,8 +12,8 @@
 /** @brief Reads the contents of a text file into a string.
  *  
  *  If there is not enough memory to read in the contents of the file, an error
- *  message is displayed before exiting the function. It is the caller's 
- *  responsibility to free the memory dynamically allocated.
+ *  message is displayed before exiting the function. It is the function 
+ *  caller's responsibility to free the memory dynamically allocated.
  *
  *  @param path The text file's path.
  *  @return The string containing the file's contents.
@@ -23,17 +23,13 @@ char *read_file(const char *path) {
 	int block_size = 1024; // in bytes
 	int blocks = 1;
 	
-	char *buf;
-	buf = malloc(block_size * blocks); 
-
+	char *buf = malloc(block_size * blocks); 
 	if (buf == NULL) {
 		fprintf(stderr, "Error - unable to allocate required memory.\n");
 		exit(1);
 	}
-	
 	int c;
 	int i = 0;
-
 	while ((c = fgetc(fp)) != EOF) {
 		if (i == blocks * block_size) { // one char is size one byte
 			blocks++;

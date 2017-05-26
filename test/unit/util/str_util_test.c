@@ -63,16 +63,3 @@ CuSuite* str_util_get_suite() {
 	SUITE_ADD_TEST(suite, parser_test);
 	return suite;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
