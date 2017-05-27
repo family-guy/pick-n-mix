@@ -24,7 +24,7 @@ $(TARGET): $(OBJS)
 build_e2e/cu_test.o: vendor/cutest-1.5/CuTest.c vendor/cutest-1.5/CuTest.h 
 	$(CC) $(CFLAGS) $(INC) vendor/cutest-1.5/CuTest.c -o build_e2e/cu_test.o
 	
-build_e2e/all_tests.o: test/e2e/all_tests.c 
+build_e2e/all_tests.o: test/e2e/all_tests.c include/macros.h
 	$(CC) $(CFLAGS) $(INC) test/e2e/all_tests.c -o build_e2e/all_tests.o
 
 

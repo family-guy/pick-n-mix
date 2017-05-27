@@ -16,11 +16,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "CuTest.h"
 #include "file_io.h"
 #include "str_util.h"
 #include "gcd_algo.h"
+#include "macros.h"
 
 /** @brief e2e test of the implementation of Euclid's algorithm that calculates
  *         the GCDs of an array of pairs of positive integers.
@@ -37,6 +39,7 @@
  *  @see gcd_euclid
  */
 void gcd_euclid_test(CuTest  *tc) {
+	clock_t start = clock();
 	const char *path = "./test/e2e/data/IntegerArray.txt";
 	
 	char *fs = read_file(path);
@@ -65,6 +68,7 @@ void gcd_euclid_test(CuTest  *tc) {
 			cond = 0;
 		}
 	}
+	PRINT_EXEC_TIME(start, __func__);
 	CuAssertTrue(tc, cond);
 	free(fs);
 	free(parsed);

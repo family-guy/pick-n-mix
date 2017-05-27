@@ -13,16 +13,19 @@
  *  @see src/algo/max_subarray_algo.c
  *  @see src/util/str_util.c
  *  @see src/io/file_io.c
+ *  @see include/macros.h
  *  @bug No known bugs.
  */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "CuTest.h"
 #include "file_io.h"
 #include "str_util.h"
 #include "max_subarray_algo.h"
+#include "macros.h"
 
 /** @brief e2e test of the maximum subarray algorithm that solves incrementally.
  *  
@@ -37,6 +40,7 @@
  *  @see max_subarray_incr
  */
 void max_subarray_incr_test(CuTest *tc) {
+	clock_t start = clock();
 	const char *path = "./test/e2e/data/IntegerArray.txt";
 	
 	char *fs = read_file(path);
@@ -67,6 +71,7 @@ void max_subarray_incr_test(CuTest *tc) {
 			cond = 0;
 		}
 	}
+	PRINT_EXEC_TIME(start, __func__);
 	CuAssertTrue(tc, cond);
 	free(fs);
 	free(A_prime);
@@ -88,6 +93,7 @@ void max_subarray_incr_test(CuTest *tc) {
  *  @see max_subarray_dc
  */
 void max_subarray_dc_test(CuTest *tc) {
+	clock_t start = clock();
 	const char *path = "./test/e2e/data/IntegerArray.txt";
 	
 	char *fs = read_file(path);
@@ -118,6 +124,7 @@ void max_subarray_dc_test(CuTest *tc) {
 			cond = 0;
 		}
 	}
+	PRINT_EXEC_TIME(start, __func__);
 	CuAssertTrue(tc, cond);
 	free(fs);
 	free(A_prime);

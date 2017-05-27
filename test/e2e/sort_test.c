@@ -10,15 +10,19 @@
  *  @see src/algo/sort_algo.c
  *  @see src/util/str_util.c
  *  @see src/io/file_io.c
+ *  @see include/macros.h
  *  @bug No known bugs.
  */
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 
 #include "CuTest.h"
 #include "file_io.h"
 #include "str_util.h"
 #include "sort_algo.h"
+#include "macros.h"
 
 /** @brief e2e test of bubble sort.
  *  
@@ -33,6 +37,7 @@
  *  @see sort_bubble
  */
 void sort_bubble_test(CuTest *tc) {
+	clock_t start = clock();
 	const char *path = "./test/e2e/data/IntegerArray.txt";
 	char *fs = read_file(path);
 	struct int_array *A_prime = parser(fs);
@@ -43,6 +48,7 @@ void sort_bubble_test(CuTest *tc) {
 			cond = 0;
 		}
 	}
+	PRINT_EXEC_TIME(start, __func__);
 	CuAssertTrue(tc, cond);
 	free(fs);
 	free(A_prime);
@@ -61,6 +67,7 @@ void sort_bubble_test(CuTest *tc) {
  *  @see sort_ins
  */
 void sort_ins_test(CuTest *tc) {
+	clock_t start = clock();
 	const char *path = "./test/e2e/data/IntegerArray.txt";
 	char *fs = read_file(path);
 	struct int_array *A_prime = parser(fs);
@@ -71,6 +78,7 @@ void sort_ins_test(CuTest *tc) {
 			cond = 0;
 		}
 	}
+	PRINT_EXEC_TIME(start, __func__);
 	CuAssertTrue(tc, cond);
 	free(fs);
 	free(A_prime);

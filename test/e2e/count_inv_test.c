@@ -12,16 +12,19 @@
  *  @see src/algo/count_inv_algo.c
  *  @see src/util/str_util.c
  *  @see src/io/file_io.c
+ *  @see include/macros.h
  *  @bug No known bugs.
  */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "CuTest.h"
 #include "file_io.h"
 #include "str_util.h"
 #include "count_inv_algo.h"
+#include "macros.h"
 
 /** @brief e2e test of the count inversion algorithm that uses merge sort.
  *  
@@ -37,6 +40,7 @@
  *  @see count_inv_ms
  */
 void count_inv_ms_test(CuTest *tc) {
+	clock_t start = clock();
 	const char *path = "./test/e2e/data/IntegerArray.txt";
 	
 	char *fs = read_file(path);
@@ -46,6 +50,7 @@ void count_inv_ms_test(CuTest *tc) {
 	unsigned long long expected = 2407905288;
 	
 	int cond = (actual == expected);
+	PRINT_EXEC_TIME(start, __func__);
 	CuAssertTrue(tc, cond);
 	free(fs);
 	free(A_prime);
