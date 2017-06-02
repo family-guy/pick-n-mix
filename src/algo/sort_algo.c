@@ -68,5 +68,17 @@ void sort_ins(struct int_array *A_prime) {
  *  @see int_array
  */
 void sort_select(struct int_array *A_prime) {
-	return;
+	for (int i = 0; i < A_prime->len - 1; i++) {
+		int min_ix = i;
+		int min_val = A_prime->A[i];
+		for (int j = i + 1; j < A_prime->len; j++) {
+			if (A_prime->A[j] < min_val) {
+				min_ix = j;
+				min_val = A_prime->A[j];
+			}
+		}
+		int tmp = A_prime->A[i];
+		A_prime->A[i] = min_val;
+		A_prime->A[min_ix] = tmp;
+	}
 }
