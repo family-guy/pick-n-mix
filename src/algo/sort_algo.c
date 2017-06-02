@@ -57,3 +57,16 @@ void sort_ins(struct int_array *A_prime) {
 		A_prime->A[j + 1] = val_to_ins;
 	}
 }
+
+/** @brief Sorts an array of integers into ascending order in-place using
+ *         selection sort.
+ *
+ *  Sorts by selecting the minimum element each time.
+ *
+ *  @param A_prime The array to sort.
+ *  @return Void.
+ *  @see int_array
+ */
+void sort_select(struct int_array *A_prime) {
+	return;
+}

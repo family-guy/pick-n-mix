@@ -27,4 +27,12 @@ void sort_bubble(struct int_array *);
  */
 void sort_ins(struct int_array *);
 
+/** @brief Sorts an array of integers into ascending order in-place using
+ *         selection sort.
+ *
+ *  @param A_prime The array to sort.
+ *  @return Void.
+ */
+void sort_select(struct int_array *);
+
 #endif
